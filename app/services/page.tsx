@@ -137,10 +137,10 @@ export default function ServicesPage() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         {[
-                            { icon: Calendar, title: "Rendez-vous", desc: "Planifiez une rencontre en présentiel", href: "#booking" },
-                            { icon: Video, title: "Appel Vidéo", desc: "Session de conseil à distance", href: "#booking" },
-                            { icon: Phone, title: "Programmer un Appel", desc: "On vous rappelle au créneau souhaité", href: "#booking" },
-                            { icon: MessageSquare, title: "Envoyer un Message", desc: "Réponse par email sous 2 heures", href: "#booking" },
+                            { icon: Calendar, title: "Rendez-vous", desc: "Planifiez une rencontre en présentiel", href: "#booking?type=audit" },
+                            { icon: Video, title: "Appel Vidéo", desc: "Session de conseil à distance", href: "#booking?type=visio" },
+                            { icon: Phone, title: "Programmer un Appel", desc: "On vous rappelle au créneau souhaité", href: "#booking?type=appel" },
+                            { icon: MessageSquare, title: "Envoyer un Message", desc: "Réponse par email sous 2 heures", href: "#booking?type=contact" },
                         ].map((action, i) => (
                             <Link 
                                 key={i}

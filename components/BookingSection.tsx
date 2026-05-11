@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useMemo, useRef } from "react";
+import { useState, useMemo, useRef, useEffect, Suspense } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Calendar as CalendarIcon, Clock, Video, MessageSquare, ChevronRight, Mail, CheckCircle2, Loader2 } from "lucide-react";
+import { Calendar as CalendarIcon, Clock, Video, MessageSquare, ChevronRight, Mail, CheckCircle2, Loader2, Phone } from "lucide-react";
+import { useSearchParams } from "next/navigation";
 
 function getNextWorkdays(count: number) {
     const dayNames   = ["Dim","Lun","Mar","Mer","Jeu","Ven","Sam"];
@@ -24,7 +25,8 @@ function getNextWorkdays(count: number) {
     return result;
 }
 
-export default function BookingSection() {
+function BookingContent() {
+    const searchParams = useSearchParams();
     const [step, setStep] = useState(1);
     const [selectedType, setSelectedType] = useState("");
     const [selectedDate, setSelectedDate] = useState("");
@@ -37,8 +39,20 @@ export default function BookingSection() {
     const types = [
         { id: "audit",   title: "Audit de Contrat",   desc: "Analyse experte de vos risques",           icon: CalendarIcon },
         { id: "devis",   title: "Demande de Devis",   desc: "Auto, Santé, Habitation, Pro",             icon: Video },
+        { id: "visio",   title: "Visioconférence",    desc: "Session de conseil à distance",            icon: Video },
+        { id: "appel",   title: "Appel Téléphonique", desc: "Programmer un appel avec un conseiller",   icon: Phone },
         { id: "contact", title: "Question Générale",  desc: "Demande d'information ou support",         icon: MessageSquare },
     ];
+
+    useEffect(() => {
+        const type = searchParams.get("type");
+        if (type && types.some(t => t.id === type)) {
+            setSelectedType(type);
+            setStep(1); // Keep at step 1 but highlight the selection, or jump to 2?
+            // If jump to 2, we need to make sure the user knows what's selected.
+            // Let's just highlight it on step 1 for now.
+        }
+    }, [searchParams]);
 
     const timeSlots = ["09:00", "10:30", "14:00", "15:30", "17:00"];
 
@@ -81,7 +95,7 @@ export default function BookingSection() {
 
     if (formStatus === "success") {
         return (
-            <section id="booking" className="py-32 bg-black text-white border-b border-white/5 flex items-center justify-center min-h-[600px]">
+            <div className="flex items-center justify-center min-h-[600px] w-full">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -103,15 +117,12 @@ export default function BookingSection() {
                         Nouvelle demande
                     </button>
                 </motion.div>
-            </section>
+            </div>
         );
     }
 
     return (
-        <section id="booking" className="py-32 bg-black text-white border-b border-white/5 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-500/[0.03] rounded-full blur-[140px] pointer-events-none" />
-
-            <div className="container mx-auto px-6 max-w-7xl relative z-10">
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
                 {/* Header */}
                 <div className="mb-20">
                     <motion.span
@@ -456,6 +467,17 @@ export default function BookingSection() {
                     </div>
                 </div>
             </div>
+        </div>
+    );
+}
+
+export default function BookingSection() {
+    return (
+        <section id="booking" className="py-32 bg-black text-white border-b border-white/5 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-500/[0.03] rounded-full blur-[140px] pointer-events-none" />
+            <Suspense fallback={<div className="container mx-auto px-6 max-w-7xl h-[600px] flex items-center justify-center"><Loader2 className="animate-spin text-blue-500" /></div>}>
+                <BookingContent />
+            </Suspense>
         </section>
     );
 }

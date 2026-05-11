@@ -31,7 +31,7 @@ export default function Footer() {
                             {[
                                 { label: "Comparer les offres", href: "/compare" },
                                 { label: "Simulation",          href: "/simulation" },
-                                { label: "Nos services",        href: "/#services" },
+                                { label: "Nos services",        href: "/services" },
                                 { label: "Glossaire",           href: "/#glossaire" },
                                 { label: "Contact",             href: "/#booking" },
                             ].map((l) => (
