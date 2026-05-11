@@ -1,9 +1,8 @@
 "use client";
 
-import { useState, useMemo, useRef, useEffect, Suspense } from "react";
+import { useState, useMemo, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Calendar as CalendarIcon, Clock, Video, MessageSquare, ChevronRight, Mail, CheckCircle2, Loader2, Phone } from "lucide-react";
-import { useSearchParams } from "next/navigation";
+import { Calendar as CalendarIcon, Clock, Video, MessageSquare, ChevronRight, Mail, CheckCircle2, Loader2 } from "lucide-react";
 
 function getNextWorkdays(count: number) {
     const dayNames   = ["Dim","Lun","Mar","Mer","Jeu","Ven","Sam"];
@@ -25,8 +24,7 @@ function getNextWorkdays(count: number) {
     return result;
 }
 
-function BookingContent() {
-    const searchParams = useSearchParams();
+export default function BookingSection() {
     const [step, setStep] = useState(1);
     const [selectedType, setSelectedType] = useState("");
     const [selectedDate, setSelectedDate] = useState("");
@@ -39,20 +37,8 @@ function BookingContent() {
     const types = [
         { id: "audit",   title: "Audit de Contrat",   desc: "Analyse experte de vos risques",           icon: CalendarIcon },
         { id: "devis",   title: "Demande de Devis",   desc: "Auto, Santé, Habitation, Pro",             icon: Video },
-        { id: "visio",   title: "Visioconférence",    desc: "Session de conseil à distance",            icon: Video },
-        { id: "appel",   title: "Appel Téléphonique", desc: "Programmer un appel avec un conseiller",   icon: Phone },
         { id: "contact", title: "Question Générale",  desc: "Demande d'information ou support",         icon: MessageSquare },
     ];
-
-    useEffect(() => {
-        const type = searchParams.get("type");
-        if (type && types.some(t => t.id === type)) {
-            setSelectedType(type);
-            setStep(1); // Keep at step 1 but highlight the selection, or jump to 2?
-            // If jump to 2, we need to make sure the user knows what's selected.
-            // Let's just highlight it on step 1 for now.
-        }
-    }, [searchParams]);
 
     const timeSlots = ["09:00", "10:30", "14:00", "15:30", "17:00"];
 
@@ -95,7 +81,7 @@ function BookingContent() {
 
     if (formStatus === "success") {
         return (
-            <div className="flex items-center justify-center min-h-[600px] w-full">
+            <section id="booking" className="py-32 bg-black text-white border-b border-white/5 flex items-center justify-center min-h-[600px]">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -117,12 +103,15 @@ function BookingContent() {
                         Nouvelle demande
                     </button>
                 </motion.div>
-            </div>
+            </section>
         );
     }
 
     return (
-        <div className="container mx-auto px-6 max-w-7xl relative z-10">
+        <section id="booking" className="py-32 bg-black text-white border-b border-white/5 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-500/[0.03] rounded-full blur-[140px] pointer-events-none" />
+
+            <div className="container mx-auto px-6 max-w-7xl relative z-10">
                 {/* Header */}
                 <div className="mb-20">
                     <motion.span
@@ -467,17 +456,6 @@ function BookingContent() {
                     </div>
                 </div>
             </div>
-        </div>
-    );
-}
-
-export default function BookingSection() {
-    return (
-        <section id="booking" className="py-32 bg-black text-white border-b border-white/5 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-500/[0.03] rounded-full blur-[140px] pointer-events-none" />
-            <Suspense fallback={<div className="container mx-auto px-6 max-w-7xl h-[600px] flex items-center justify-center"><Loader2 className="animate-spin text-blue-500" /></div>}>
-                <BookingContent />
-            </Suspense>
         </section>
     );
 }

@@ -3,7 +3,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import { Shield, Briefcase, Users, FileText, ArrowRight, Phone, MessageSquare, Calendar, Video } from "lucide-react";
+import { Shield, Briefcase, Users, FileText, ArrowRight, Calendar, Zap } from "lucide-react";
 import Link from "next/link";
 import BookingSection from "@/components/BookingSection";
 
@@ -125,38 +125,32 @@ export default function ServicesPage() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
-                        className="mb-20"
+                        className="max-w-3xl mx-auto"
                     >
-                        <h2 className="text-4xl md:text-6xl font-bold uppercase font-oswald tracking-tighter mb-6">
-                            Prêt à passer à l'action ?
+                        <h2 className="text-4xl md:text-6xl font-bold uppercase font-oswald tracking-tighter mb-8">
+                            Besoin d'un <span className="text-blue-500">Expert</span> ?
                         </h2>
-                        <p className="text-gray-500 font-light max-w-xl mx-auto">
-                            Choisissez le mode de contact qui vous convient le mieux. Notre équipe est réactive et à votre écoute.
+                        <p className="text-gray-500 font-light text-lg mb-12 leading-relaxed">
+                            LBASSUR vous accompagne dans toutes vos démarches. Que ce soit pour un audit gratuit, une demande de devis ou un conseil personnalisé, notre équipe est prête à vous recevoir.
                         </p>
-                    </motion.div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {[
-                            { icon: Calendar, title: "Rendez-vous", desc: "Planifiez une rencontre en présentiel", href: "#booking?type=audit" },
-                            { icon: Video, title: "Appel Vidéo", desc: "Session de conseil à distance", href: "#booking?type=visio" },
-                            { icon: Phone, title: "Programmer un Appel", desc: "On vous rappelle au créneau souhaité", href: "#booking?type=appel" },
-                            { icon: MessageSquare, title: "Envoyer un Message", desc: "Réponse par email sous 2 heures", href: "#booking?type=contact" },
-                        ].map((action, i) => (
+                        
+                        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                             <Link 
-                                key={i}
-                                href={action.href}
-                                className="glass p-10 flex flex-col items-center group hover:bg-white hover:text-black transition-all duration-700 border-white/5"
+                                href="#booking"
+                                className="w-full sm:w-auto px-12 py-6 bg-white text-black text-[11px] font-black uppercase tracking-[0.3em] hover:scale-[1.02] active:scale-95 transition-all duration-500 flex items-center justify-center gap-3"
                             >
-                                <div className="w-16 h-16 bg-white/5 border border-white/10 rounded-full flex items-center justify-center mb-8 group-hover:bg-black/5 group-hover:border-black/10 transition-all duration-700">
-                                    <action.icon size={24} className="text-blue-400 group-hover:text-black transition-colors" />
-                                </div>
-                                <h4 className="text-sm font-bold uppercase tracking-widest mb-3">{action.title}</h4>
-                                <p className="text-[10px] text-gray-500 group-hover:text-gray-700 uppercase tracking-wider leading-relaxed">
-                                    {action.desc}
-                                </p>
+                                <Calendar size={16} />
+                                Prendre Rendez-vous
                             </Link>
-                        ))}
-                    </div>
+                            <Link 
+                                href="/simulation"
+                                className="w-full sm:w-auto px-12 py-6 glass text-white text-[11px] font-black uppercase tracking-[0.3em] hover:bg-white/10 hover:scale-[1.02] active:scale-95 transition-all duration-500 flex items-center justify-center gap-3"
+                            >
+                                <Zap size={16} />
+                                Faire une Simulation
+                            </Link>
+                        </div>
+                    </motion.div>
                 </div>
             </section>
 
