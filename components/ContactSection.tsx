@@ -132,8 +132,7 @@ export default function ContactSection() {
                                     ) : "Envoyer le message"}
                                 </button>
                             </form>
-                        )
-         )}
+                        )}
                     </motion.div>
 
                     {/* Info Side */}
