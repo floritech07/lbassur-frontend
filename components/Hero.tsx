@@ -73,7 +73,7 @@ export default function Hero() {
                     transition={{ duration: 1, delay: 0.7 }}
                     className="text-base md:text-xl text-gray-400 max-w-xl mx-auto font-light leading-relaxed mb-12"
                 >
-                    <span className="text-white font-medium">L'excellence en protection.</span>
+                    <span className="text-white font-medium">S'assurer Juste</span>
                     <span className="block mt-1 text-gray-500">Particuliers · Professionnels · Entreprises</span>
                 </motion.p>
 
