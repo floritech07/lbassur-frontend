@@ -1,0 +1,69 @@
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import GridSection from "@/components/GridSection";
+import ComparisonHomeSection from "@/components/ComparisonHomeSection";
+import PartnersSection from "@/components/PartnersSection";
+import ProcessSection from "@/components/ProcessSection";
+import StatsSection from "@/components/StatsSection";
+import FeatureSection from "@/components/FeatureSection";
+import ItojuPromo from "@/components/ItojuPromo";
+import GlossarySection from "@/components/GlossarySection";
+import BookingSection from "@/components/BookingSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import Footer from "@/components/Footer";
+
+export default function Home() {
+  return (
+    <main className="bg-black min-h-screen text-white">
+      <Navbar />
+      <Hero />
+      <GridSection />
+      <ComparisonHomeSection />
+      <PartnersSection />
+      <ProcessSection />
+      <StatsSection />
+
+      <div id="services">
+        <FeatureSection
+          title="L'Audit"
+          subtitle="Analyse & Expertise"
+          description="Étude approfondie de vos risques et de vos contrats en cours pour identifier clairement les éventuels vides ou insuffisances de couverture. Nous garantissons une analyse précise pour une protection optimale."
+          backgroundClass="bg-gradient-to-br from-blue-900 via-indigo-950 to-black"
+          imageSrc="/images/corporate/black_businessman_corporate_1777914404899.png"
+          align="left"
+        />
+        <FeatureSection
+          title="L'Assurance"
+          subtitle="Solutions Sur Mesure"
+          description="Nous offrons un panorama représentatif des meilleurs contrats du marché, sélectionnés par nos soins pour tous types de risques. Simplifiez votre processus d'assurance avec nos solutions adaptées."
+          backgroundClass="bg-gradient-to-tr from-emerald-950 via-teal-900 to-black"
+          imageSrc="/images/corporate/black_businesswoman_corporate_1777914579889.png"
+          align="right"
+        />
+        <FeatureSection
+          title="Conseil & Accompagnement"
+          subtitle="Support Continu"
+          description="LBASSUR et son équipe vous apportent conseil, écoute et accompagnement durant toute la durée de votre contrat. Une réelle prise en compte de chaque assuré pour suivre l'évolution des risques."
+          backgroundClass="bg-gradient-to-bl from-violet-950 via-purple-900 to-black"
+          imageSrc="/images/corporate/black_business_team_1777914501514.png"
+          align="left"
+        />
+        <FeatureSection
+          title="Indemnisation Rapide"
+          subtitle="Engagement Qualité"
+          description="En cas de sinistre, comptez sur nous pour une indemnisation rapide et équitable. Nous prenons en charge toutes les démarches administratives pour garantir votre tranquillité d'esprit."
+          backgroundClass="bg-gradient-to-tl from-slate-900 via-gray-900 to-black"
+          imageSrc="/images/corporate/black_business_team_1777914501514.png"
+          align="right"
+        />
+      </div>
+
+      <ItojuPromo />
+
+      <GlossarySection />
+      <BookingSection />
+      <TestimonialsSection />
+      <Footer />
+    </main>
+  );
+}
