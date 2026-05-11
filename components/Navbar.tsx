@@ -56,12 +56,12 @@ export default function Navbar() {
                 </Link>
 
                 {/* ── Center nav links (Tesla style) ── */}
-                <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center gap-10">
+                <div className="absolute left-1/2 -translate-x-1/2 hidden lg:flex items-center gap-10">
                     {centerLinks.map((link) => (
                         <Link
                             key={link.name}
                             href={link.href}
-                            className="relative text-[14px] uppercase tracking-[0.3em] font-bold text-gray-500 hover:text-white transition-colors duration-300 group"
+                            className="relative text-[14px] uppercase tracking-[0.2em] font-bold text-gray-500 hover:text-white transition-colors duration-300 group"
                         >
                             {link.name}
                             <span className="absolute -bottom-1 left-0 w-0 h-px bg-blue-500 transition-all duration-400 group-hover:w-full" />
@@ -70,16 +70,16 @@ export default function Navbar() {
                 </div>
 
                 {/* ── Right — Simulation + CTA ── */}
-                <div className="hidden md:flex items-center gap-6 z-10">
+                <div className="hidden lg:flex items-center gap-6 z-10">
                     <Link
                         href="/simulation"
-                        className="text-[14px] uppercase tracking-[0.3em] font-bold text-blue-400 hover:text-blue-300 transition-colors duration-300"
+                        className="text-[14px] uppercase tracking-[0.2em] font-bold text-blue-400 hover:text-blue-300 transition-colors duration-300"
                     >
                         Simulation
                     </Link>
                     <Link
                         href="/#booking"
-                        className="text-[14px] uppercase tracking-[0.25em] font-bold text-white border border-white/20 px-5 py-2 hover:bg-white hover:text-black transition-all duration-500 bg-white/[0.03] backdrop-blur-sm"
+                        className="text-[14px] uppercase tracking-[0.2em] font-bold text-white border border-white/20 px-5 py-2 hover:bg-white hover:text-black transition-all duration-500 bg-white/[0.03] backdrop-blur-sm"
                     >
                         Rendez-vous
                     </Link>
@@ -87,7 +87,7 @@ export default function Navbar() {
 
                 {/* ── Mobile burger ── */}
                 <button
-                    className="md:hidden text-white z-50 p-1 flex flex-col gap-[5px] group"
+                    className="lg:hidden text-white z-50 p-1 flex flex-col gap-[5px] group"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     aria-label="Menu"
                 >
@@ -128,7 +128,7 @@ export default function Navbar() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -8 }}
                         transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
-                        className="fixed inset-0 bg-black z-40 flex flex-col justify-center items-center md:hidden"
+                        className="fixed inset-0 bg-black z-40 flex flex-col justify-center items-center lg:hidden"
                     >
                         <div className="flex flex-col items-center gap-10">
                             {allMobileLinks.map((link, i) => (
