@@ -53,10 +53,10 @@ export default function GridSection() {
                                     <div className="w-10 h-10 border border-white/10 flex items-center justify-center mb-8 group-hover:border-blue-500/40 transition-colors duration-500">
                                         <item.icon className="text-gray-500 group-hover:text-blue-400 transition-colors duration-500" size={18} />
                                     </div>
-                                    <h3 className="text-sm font-bold uppercase tracking-[0.15em] mb-4 font-oswald text-white">
+                                    <h3 className="text-lg md:text-xl font-bold uppercase tracking-[0.15em] mb-4 font-oswald text-white">
                                         {item.title}
                                     </h3>
-                                    <p className="text-gray-500 leading-relaxed text-sm font-light">
+                                    <p className="text-gray-400 leading-relaxed text-base md:text-lg font-light">
                                         {item.description}
                                     </p>
                                 </div>

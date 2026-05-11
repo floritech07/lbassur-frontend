@@ -73,7 +73,7 @@ export default function FeatureSection({
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 1, delay: 0.2 }}
                 >
-                    <span className="glass inline-block py-2 px-6 rounded-full text-[10px] md:text-xs uppercase tracking-[0.4em] text-blue-400 font-bold mb-6">
+                    <span className="glass inline-block py-2.5 px-8 rounded-full text-[14px] md:text-sm uppercase tracking-[0.4em] text-blue-400 font-bold mb-6">
                         {subtitle}
                     </span>
                 </motion.div>
@@ -103,7 +103,7 @@ export default function FeatureSection({
                 >
                     <Link 
                         href={href}
-                        className="glass group inline-flex items-center gap-4 px-10 py-5 text-[11px] uppercase tracking-widest text-white hover:bg-white hover:text-black transition-all duration-500 font-bold rounded-sm border-white/10 overflow-hidden"
+                        className="glass group inline-flex items-center gap-4 px-10 py-5 text-[15px] uppercase tracking-widest text-white hover:bg-white hover:text-black transition-all duration-500 font-bold rounded-sm border-white/10 overflow-hidden"
                     >
                         <span className="relative z-10">Détails Service</span>
                         <ArrowRight size={14} className="relative z-10 transition-transform group-hover:translate-x-1" />

@@ -53,7 +53,7 @@ export default function Hero() {
                     transition={{ duration: 1, delay: 0.3 }}
                     className="mb-10 inline-block"
                 >
-                    <span className="glass py-2 px-6 text-[10px] uppercase tracking-[0.4em] text-blue-400 font-bold">
+                    <span className="glass py-2.5 px-8 text-[14px] uppercase tracking-[0.4em] text-blue-400 font-bold">
                         L'Assurance Réinventée
                     </span>
                 </motion.div>
@@ -85,14 +85,14 @@ export default function Hero() {
                 >
                     <a
                         href="#booking"
-                        className="group px-8 py-4 bg-white text-black text-[11px] uppercase tracking-[0.2em] font-bold hover:scale-[1.02] active:scale-95 flex items-center gap-2"
+                        className="group px-10 py-5 bg-white text-black text-[15px] uppercase tracking-[0.2em] font-bold hover:scale-[1.02] active:scale-95 flex items-center gap-2"
                     >
                         Nous Contacter
                         <ChevronRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
                     </a>
                     <Link
                         href="/services"
-                        className="glass px-8 py-4 text-white text-[11px] uppercase tracking-[0.2em] font-bold hover:bg-white/10 hover:scale-[1.02] active:scale-95"
+                        className="glass px-10 py-5 text-white text-[15px] uppercase tracking-[0.2em] font-bold hover:bg-white/10 hover:scale-[1.02] active:scale-95"
                     >
                         Nos Services
                     </Link>
@@ -107,7 +107,7 @@ export default function Hero() {
                 className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
             >
                 <div className="w-px h-14 bg-gradient-to-b from-blue-500/60 to-transparent" />
-                <span className="text-[9px] uppercase tracking-[0.5em] text-gray-600 ml-[0.5em]">Scroll</span>
+                <span className="text-[13px] uppercase tracking-[0.5em] text-gray-600 ml-[0.5em]">Scroll</span>
             </motion.div>
 
             {/* Bottom fade to black */}

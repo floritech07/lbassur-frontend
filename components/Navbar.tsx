@@ -61,7 +61,7 @@ export default function Navbar() {
                         <Link
                             key={link.name}
                             href={link.href}
-                            className="relative text-[10px] uppercase tracking-[0.3em] font-bold text-gray-500 hover:text-white transition-colors duration-300 group"
+                            className="relative text-[14px] uppercase tracking-[0.3em] font-bold text-gray-500 hover:text-white transition-colors duration-300 group"
                         >
                             {link.name}
                             <span className="absolute -bottom-1 left-0 w-0 h-px bg-blue-500 transition-all duration-400 group-hover:w-full" />
@@ -73,13 +73,13 @@ export default function Navbar() {
                 <div className="hidden md:flex items-center gap-6 z-10">
                     <Link
                         href="/simulation"
-                        className="text-[10px] uppercase tracking-[0.3em] font-bold text-blue-400 hover:text-blue-300 transition-colors duration-300"
+                        className="text-[14px] uppercase tracking-[0.3em] font-bold text-blue-400 hover:text-blue-300 transition-colors duration-300"
                     >
                         Simulation
                     </Link>
                     <Link
                         href="/#booking"
-                        className="text-[10px] uppercase tracking-[0.25em] font-bold text-white border border-white/20 px-5 py-2 hover:bg-white hover:text-black transition-all duration-500 bg-white/[0.03] backdrop-blur-sm"
+                        className="text-[14px] uppercase tracking-[0.25em] font-bold text-white border border-white/20 px-5 py-2 hover:bg-white hover:text-black transition-all duration-500 bg-white/[0.03] backdrop-blur-sm"
                     >
                         Rendez-vous
                     </Link>
