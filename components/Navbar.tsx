@@ -8,14 +8,14 @@ import { motion, AnimatePresence } from "framer-motion";
 const centerLinks = [
     { name: "Accueil",  href: "/" },
     { name: "Comparer", href: "/#compare" },
-    { name: "Services", href: "/#services" },
+    { name: "Services", href: "/services" },
     { name: "Glossaire",href: "/#glossaire" },
 ];
 
 const allMobileLinks = [
     { name: "Accueil",    href: "/" },
     { name: "Comparer",   href: "/#compare" },
-    { name: "Services",   href: "/#services" },
+    { name: "Services",   href: "/services" },
     { name: "Glossaire",  href: "/#glossaire" },
     { name: "Simulation", href: "/simulation" },
     { name: "Rendez-vous",href: "/#booking" },

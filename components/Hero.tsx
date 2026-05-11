@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 const heroGradients = [
     "from-blue-950 via-black to-slate-950",
@@ -89,12 +90,12 @@ export default function Hero() {
                         Nous Contacter
                         <ChevronRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
                     </a>
-                    <a
-                        href="#services"
+                    <Link
+                        href="/services"
                         className="glass px-8 py-4 text-white text-[11px] uppercase tracking-[0.2em] font-bold hover:bg-white/10 hover:scale-[1.02] active:scale-95"
                     >
                         Nos Services
-                    </a>
+                    </Link>
                 </motion.div>
             </div>
 

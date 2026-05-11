@@ -31,7 +31,7 @@ export default function Home() {
           backgroundClass="bg-gradient-to-br from-blue-900 via-indigo-950 to-black"
           imageSrc="/images/corporate/black_businessman_corporate_1777914404899.png"
           align="left"
-          href="#booking"
+          href="/services#audit"
         />
         <FeatureSection
           title="L'Assurance"
@@ -40,7 +40,7 @@ export default function Home() {
           backgroundClass="bg-gradient-to-tr from-emerald-950 via-teal-900 to-black"
           imageSrc="/images/corporate/black_businesswoman_corporate_1777914579889.png"
           align="right"
-          href="/simulation"
+          href="/services#assurance"
         />
         <FeatureSection
           title="Conseil & Accompagnement"
@@ -49,7 +49,7 @@ export default function Home() {
           backgroundClass="bg-gradient-to-bl from-violet-950 via-purple-900 to-black"
           imageSrc="/images/corporate/black_business_team_1777914501514.png"
           align="left"
-          href="#booking"
+          href="/services#conseil"
         />
         <FeatureSection
           title="Indemnisation Rapide"
@@ -58,7 +58,7 @@ export default function Home() {
           backgroundClass="bg-gradient-to-tl from-slate-900 via-gray-900 to-black"
           imageSrc="/images/corporate/black_business_team_1777914501514.png"
           align="right"
-          href="#booking"
+          href="/services#indemnisation"
         />
       </div>
 
