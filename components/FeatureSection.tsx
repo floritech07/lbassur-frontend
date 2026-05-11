@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 interface FeatureSectionProps {
     title: string;
@@ -12,6 +13,7 @@ interface FeatureSectionProps {
     backgroundClass: string;
     imageSrc?: string;
     align?: "left" | "right" | "center";
+    href?: string;
 }
 
 export default function FeatureSection({
@@ -21,6 +23,7 @@ export default function FeatureSection({
     backgroundClass,
     imageSrc,
     align = "left",
+    href = "#booking",
 }: FeatureSectionProps) {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-20%" });
@@ -98,10 +101,13 @@ export default function FeatureSection({
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 1, delay: 0.7 }}
                 >
-                    <button className="glass group flex items-center gap-4 px-10 py-5 text-[11px] uppercase tracking-widest text-white hover:bg-white hover:text-black transition-all duration-500 font-bold rounded-sm border-white/10 overflow-hidden">
+                    <Link 
+                        href={href}
+                        className="glass group inline-flex items-center gap-4 px-10 py-5 text-[11px] uppercase tracking-widest text-white hover:bg-white hover:text-black transition-all duration-500 font-bold rounded-sm border-white/10 overflow-hidden"
+                    >
                         <span className="relative z-10">Détails Service</span>
                         <ArrowRight size={14} className="relative z-10 transition-transform group-hover:translate-x-1" />
-                    </button>
+                    </Link>
                 </motion.div>
             </div>
         </section>
